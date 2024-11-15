@@ -17,9 +17,9 @@ const Register = () => {
                 setUser(result?.user)
                 updateUserProfile({ displayName: name, photoURL: photo })
                     .then(() => navigate('/'))
-                    .catch(error => console.log(error.message))
+                    .catch(error => {})
             })
-            .catch(error => console.log(error?.message))
+            .catch(error => {})
 
     }
     return (
