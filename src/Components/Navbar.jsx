@@ -17,7 +17,13 @@ const Navbar = () => {
             </div>
             <div className='flex items-center gap-3'>
                 <div>
-                    <img src={userIcon} alt="" />
+                    {
+                        user && user?.email ? <div className='flex flex-col items-center'>
+                            <img className='w-14 rounded-full border-2 p-1' src={user?.photoURL} alt="" />
+                            <p>{user?.displayName}</p>
+                        </div>
+                            : <img src={userIcon} alt="" />
+                    }
                 </div>
                 {
                     user && user?.email ? <button onClick={logOut} className='btn btn-neutral'>Log-Out</button> : <Link to='/auth/login' className='btn btn-neutral'>Login</Link>
